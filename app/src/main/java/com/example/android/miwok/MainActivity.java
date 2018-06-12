@@ -35,14 +35,11 @@ public class MainActivity extends AppCompatActivity {
         TextView numbers = (TextView) findViewById(R.id.numbers);
 
         // Set a click listener on that View
-        numbers.setOnClickListener(new OnClickListener() {
-            // The code in this method will be executed when the numbers category is clicked on.
+        numbers.setOnClickListener(new View.OnClickListener() {
+            // The code in this method will be executed when the numbers View is clicked on.
             @Override
             public void onClick(View view) {
-                // Create a new intent to open the {@link NumbersActivity}
                 Intent numbersIntent = new Intent(MainActivity.this, NumbersActivity.class);
-
-                // Start the new activity
                 startActivity(numbersIntent);
             }
         });
@@ -94,5 +91,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(phrasesIntent);
             }
         });
+
+
     }
 }
