@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -33,6 +34,12 @@ public class FamilyMemberAdapter extends ArrayAdapter<FamilyMember> {
 
         TextView defaultTextView = (TextView) listItemView.findViewById(R.id.default_text_view);
         defaultTextView.setText(currentFamilyMember.getDefaultTranslation());
+
+        // Find the ImageView in the list_item.xml layout with the ID
+        ImageView iconView = (ImageView) listItemView.findViewById(R.id.list_item_image);
+        // Get the image resource ID from the current Word object and
+        // set the image to iconView
+        iconView.setImageResource(currentFamilyMember.getImageId());
 
         return listItemView;
         //return super.getView(position, convertView, parent);

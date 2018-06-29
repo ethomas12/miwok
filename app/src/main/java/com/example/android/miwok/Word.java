@@ -56,6 +56,6 @@ public class Word {
     /**
      * Get the associated image for the word.
      */
-    public int getAssociatedImage() { return mImageId; }
+    public int getImageId() { return mImageId; }
 
 }
