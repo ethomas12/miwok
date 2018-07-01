@@ -9,7 +9,7 @@ public class Word {
     private String mMiwokTranslation;
 
     /** Associated image for the word */
-    private int mImageId;
+    private int mImageId  = NO_IMAGE_PROVIDED;
 
     /**
      * Create a new Word object.
@@ -53,9 +53,16 @@ public class Word {
         return mMiwokTranslation;
     }
 
+    /** Constant value that represents no image was provided for this word */
+    private static final int NO_IMAGE_PROVIDED = -1;
+
     /**
      * Get the associated image for the word.
      */
     public int getImageId() { return mImageId; }
+
+    public boolean hasImage() {
+        return mImageId != NO_IMAGE_PROVIDED;
+    }
 
 }
