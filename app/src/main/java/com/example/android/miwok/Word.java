@@ -3,13 +3,19 @@ package com.example.android.miwok;
 public class Word {
 
     /** Default translation for the word */
-    private String mDefaultTranslation;
+    private String mDefaultTranslationId;
 
     /** Miwok translation for the word */
-    private String mMiwokTranslation;
+    private String mMiwokTranslationId;
 
     /** Associated image for the word */
     private int mImageId  = NO_IMAGE_PROVIDED;
+
+    /** Associated audio file for the word */
+    private int mAudioId;
+
+    /** Constant value that represents no image was provided for this word */
+    private static final int NO_IMAGE_PROVIDED = -1;
 
     /**
      * Create a new Word object.
@@ -18,10 +24,13 @@ public class Word {
      *                           (such as English)
      * @param miwokTranslation is the word in the Miwok language
      *
+     * @param audioId is the resource ID for the audio file associated with this word
+     *
      */
-    public Word(String defaultTranslation, String miwokTranslation) {
-        mDefaultTranslation = defaultTranslation;
-        mMiwokTranslation = miwokTranslation;
+    public Word(String defaultTranslation, String miwokTranslation, int audioId) {
+        mDefaultTranslationId = defaultTranslation;
+        mMiwokTranslationId = miwokTranslation;
+        mAudioId = audioId;
     }
     /**
      * Create a new WordImage object.
@@ -31,30 +40,31 @@ public class Word {
      * @param miwokTranslation is the word in the Miwok language
      *
      * @param imageId is the image associated with the word
+     *
+     * @param audioId is the resource ID for the audio file associated with this word
      */
 
-    public Word (String defaultTranslation, String miwokTranslation, int imageId) {
-        mDefaultTranslation = defaultTranslation;
-        mMiwokTranslation = miwokTranslation;
+    public Word (String defaultTranslation, String miwokTranslation, int imageId, int audioId) {
+        mDefaultTranslationId = defaultTranslation;
+        mMiwokTranslationId = miwokTranslation;
         mImageId = imageId;
+        mAudioId = audioId;
     }
 
     /**
      * Get the default translation of the word.
      */
     public String getDefaultTranslation() {
-        return mDefaultTranslation;
+        return mDefaultTranslationId;
     }
 
     /**
      * Get the Miwok translation of the word.
      */
     public String getMiwokTranslation() {
-        return mMiwokTranslation;
+        return mMiwokTranslationId;
     }
 
-    /** Constant value that represents no image was provided for this word */
-    private static final int NO_IMAGE_PROVIDED = -1;
 
     /**
      * Get the associated image for the word.
@@ -65,4 +75,18 @@ public class Word {
         return mImageId != NO_IMAGE_PROVIDED;
     }
 
+    /**
+     * Get the associated audio file for the word.
+     */
+    public int getAudioId() { return mAudioId; }
+
+    @Override
+    public String toString() {
+        return "Word{" +
+                "mDefaultTranslationId='" + mDefaultTranslationId + '\'' +
+                ", mMiwokTranslationId='" + mMiwokTranslationId + '\'' +
+                ", mImageId=" + mImageId +
+                ", mAudioId=" + mAudioId +
+                '}';
+    }
 }

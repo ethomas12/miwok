@@ -1,9 +1,6 @@
 package com.example.android.miwok;
 
-import android.app.Activity;
 import android.content.Context;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -35,7 +32,6 @@ public class WordAdapter extends ArrayAdapter<Word> {
     public View getView(int position, View convertView, ViewGroup parent) {
         // Check if the existing view is being reused, otherwise inflate the view
         View listItemView = convertView;
-
         if (listItemView == null) {
 //            le inflate - inflates a new listItemView called list_item (turns an XML file into actual view objects)
             listItemView = LayoutInflater.from(getContext()).inflate(
@@ -71,6 +67,5 @@ public class WordAdapter extends ArrayAdapter<Word> {
         // Return the whole list item layout (containing 2 TextViews) so that it can be shown in
         // the ListView.
         return listItemView;
-        //return super.getView(position, convertView, parent);
     }
 }
