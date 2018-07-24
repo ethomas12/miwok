@@ -69,8 +69,13 @@ public class Word {
     /**
      * Get the associated image for the word.
      */
-    public int getImageId() { return mImageId; }
+    public int getImageId() {
+        return mImageId;
+    }
 
+    /**
+     * Returns whether or not there is an image for this word.
+     */
     public boolean hasImage() {
         return mImageId != NO_IMAGE_PROVIDED;
     }
@@ -78,15 +83,7 @@ public class Word {
     /**
      * Get the associated audio file for the word.
      */
-    public int getAudioId() { return mAudioId; }
-
-    @Override
-    public String toString() {
-        return "Word{" +
-                "mDefaultTranslationId='" + mDefaultTranslationId + '\'' +
-                ", mMiwokTranslationId='" + mMiwokTranslationId + '\'' +
-                ", mImageId=" + mImageId +
-                ", mAudioId=" + mAudioId +
-                '}';
+    public int getAudioId() {
+        return mAudioId;
     }
 }
